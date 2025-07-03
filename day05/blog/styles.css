@@ -87,7 +87,7 @@ section{
         gap: 0.5rem;
     }
     #posts{
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3 1fr);
         gap: 1rem;
     }
     aside{
