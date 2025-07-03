@@ -1,0 +1,36 @@
+html{
+    font-size: 16px;
+}
+body{
+    margin: 0;
+    font-family: arial, sans-serif;
+}
+h1{
+    text-align: center;
+    padding: 2rem; /* 32px */
+    background-color: lightblue;
+}
+main{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(1,1fr); 
+    gap: 1rem;
+}
+.box{
+    padding: 1rem;
+    background-color: lightcoral;
+    text-align: center;
+    box-sizing: border-box;
+}
+/* 태블릿: 768px 이상 */
+@media (min-width: 1023px){
+    main{
+        grid-template-columns: repeat(2, 1tr);
+    }
+}
+/* 모바일 */
+@media (min-width: 767px){
+    main{
+        grid-template-columns: 1fr;
+    }
+}
