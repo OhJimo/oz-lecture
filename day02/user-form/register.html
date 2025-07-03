@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>User Registration Form</title>
+</head>
+<body>
+    <!-- 시맨틱 헤더 -->
+    <header>
+        <h1>User Registration</h1>
+        <svg width="100" height="100">
+            <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="black"
+            stroke-width="2"
+            fill="blue"
+            />
+        </svg>
+    </header>
+    <!-- 시맨틱 네비게이션 -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <hr />
+    <!-- 시맨틱 섹션 -->
+    <section>
+        <h2>Registration</h2>
+        <!-- 폼 입력 -->
+        <form action="#" method="POST">
+            <!-- 텍스트 입력 -->
+            <div>
+                <label for="text">이름:</label>
+                <input type="text" name="text" id="text" /><br />
+                
+                <label for="email">이메일:</label>
+                <input type="email" name="email" id="email" /><br />
+                
+                <label for="password">비밀번호:</label>
+                <input type="password" name="password" id="password" /><br />
+                
+                <label for="date">생년월일:</label>
+                <input type="date" name="date" id="date" />
+            </div>
+            <!-- 범위가 있는 -->
+            <div>
+                <label for="age">나이:</label>
+                <input type="number" name="age" id="age" min="18" max="100" /><br />
+                
+                <label for="satisfaction">만족도:</label>
+                <input
+                type="range"
+                name="satisfaction"
+                id="satisfaction"
+                min="1"
+                max="10"
+                />
+            </div>
+            <!-- 성별 단일 선택 -->
+            <div>
+                성별:
+                <input type="radio" name="gender" id="male" value="Male" />
+                <label for="male">Male</label>
+                
+                <input type="radio" name="gender" id="female" value="Female" />
+                <label for="female">Female</label>
+                
+                <input type="radio" name="gender" id="other" value="Other" />
+                <label for="other">Other</label>
+            </div>
+            <!-- 관심사 다중 선택 -->
+            <div>
+                관심사:
+                <input type="checkbox" name="interests" id="coding" value="Coding" />
+                <label for="coding">Coding</label>
+                
+                <input type="checkbox" name="interests" id="gaming" value="Gaming" />
+                <label for="gaming">Gaming</label>
+                
+                <input
+                type="checkbox"
+                name="interests"
+                id="reading"
+                value="Reading"
+                />
+                <label for="reading">Reading</label>
+            </div>
+            <!-- 국가 드롭다운 선택 -->
+            <div>
+                국가:
+                <select name="country" id="country">
+                    <option value="kr">South Korea</option>
+                    <option value="us">USA</option>
+                    <option value="jp">Japan</option>
+                    <option value="cn">China</option>
+                    <option value="gb">UK</option>
+                </select>
+            </div>
+            <hr />
+            <!-- 버튼 -->
+            <div>
+                <button type="submit">제출</button>
+                <button type="reset">초기화</button>
+            </div>
+        </form>
+    </section>
+    <!-- 아티클 -->
+    <article>
+        <p>회원가입을 하시면 다양한 혜택을 받으실 수 있습니다.</p>
+        <!-- 캔버스에 대한 위치와 사이즈 설명 -->
+        <canvas width="100" height="100"
+        >여기는 캔버스 100x100이 있습니다.</canvas
+        >
+    </article>
+    <!-- 사이드 바 -->
+    <aside>
+        <ul>
+            <li><a href="#">Registration Tips</a></li>
+            <li><a href="#">Contact Support</a></li>
+        </ul>
+        <video
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        controls
+        width="300"
+        ></video>
+    </aside>
+    <!-- 풋터 -->
+    <footer>
+        <p>&copy; 2025 Your Website</p>
+        <p>Tel: 010-0000-0000</p>
+    </footer>
+</body>
+</html>

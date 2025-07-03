@@ -1,0 +1,89 @@
+/* 전체 선택자: 기본 스타일 리셋 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 클래스 선택자 */
+.form-group{
+    margin-bottom: 15px;
+}
+/* 태그 선택자 */
+body{
+    background-color: #f0f0f0;
+    font-family: arial,sans-serif;
+}
+/* 아이디 선택자 */
+#registration-form{
+    max-width: 500px;
+    margin: 0 auto;
+}
+/* 속성 선택자 */
+[type="text"], [type="email"], [type="password"]{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+/* 속성 선택자 */
+[type="submit"], [type="reset"]{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+}
+/* 후손 선택자: 태그 하위에 있는 태그 적용 */
+form p{
+    padding: 5px;
+}
+/* 자식 선택자: 태그 바로 아래 태그만 적용 */
+form > p{
+    border-bottom: 1px solid blueviolet;
+}
+label{
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+select{
+    color: green;
+}
+/* 속성 선택자 태그: 가상 선택자(마우스 커서 이동 시 색상 변경 */
+[type="submit"]:hover, [type="reset"]:hover{
+    background-color: #0056b3;
+}
+/* 셀렉트 태그: 가상 선택자(마우스 커서 이동 시 색상 변경 */
+select:hover{
+    border-color: #007bff;
+}
+/* 폼 태그에서 p태그 중 첫 번째 자식 */
+form > p:first-child{
+    margin-top: 20px;
+}
+/* 태그: 첫 번째 자식 */
+select option:first-child{
+    font-weight: bold;
+}
+/* 태그 가상 클래스 */
+h1::after{
+    content: "🌟";
+    margin-left: 10px;
+}
+/* 클래스: 가상 클래스 */
+.form-group::after{
+    content: "";
+    display: block;
+    height: 1px;
+    background: #ddd;
+    margin-top: 10px;
+}
+/* 태그와 속성 조합의 가상 클래스 */
+label[for="name"]::after{
+    content: "*";
+    color: red;
+}
+label[for="email"]::after{
+    content: "*";
+    color: red;
+}
+label[for="password"]::after{
+    content: "*";
+    color: red;
+}
