@@ -12,13 +12,29 @@
             .task-item {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 padding: 10px;
                 border-bottom: 1px solid #ccc;
+            }
+            .task-item span {
+                cursor: pointer;
+            }
+            .task-item span:hover {
+                background-color: #f0f0f0;
             }
             .completed {
                 text-decoration: line-through;
                 color: #888;
             }
+
+            .high-priority {
+                color: red;
+                font-weight: bold;
+            }
+            .low-priority {
+                color: black;
+            }
+
             .delete-button {
                 background-color: #ff4444;
                 color: white;
@@ -30,27 +46,48 @@
                 background-color: #cc0000;
             }
             input,
-            button {
+            button,
+            select {
                 padding: 8px;
                 margin: 5px;
+            }
+            .h1 {
+                margin-left: 5px;
+            }
+
+            .input-container {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 10px;
+            }
+
+            #taskInput {
+                flex: 1;
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>할 일 목록</h1>
-            <div>
+            <h1 class="h1">할 일 목록</h1>
+
+            <div class="input-container">
                 <input
                     type="text"
                     id="taskInput"
                     placeholder="할 일을 입력하세요!"
                 />
+                <select id="priority">
+                    <option value="low">낮음</option>
+                    <option value="high">높음</option>
+                </select>
                 <button id="addButton">추가</button>
                 <button id="clearButton">전체 삭제</button>
             </div>
-            <ul id="taskList">
-                <li class="task-item"></li>
-            </ul>
+
+            <div id="taskCount"></div>
+
+            <ul id="taskList"></ul>
         </div>
         <script src="dom-assignment.js"></script>
     </body>
