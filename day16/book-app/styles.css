@@ -1,45 +1,295 @@
+/* Framer 스타일 - 모던 그레이 테마 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
+
+/* 메인 컨테이너 */
+.main-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+/* 제목 - Framer 스타일 */
 h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #212529;
     text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
 }
-.book-container {
-    margin-top: 20px;
+
+/* 서브타이틀 추가 */
+.subtitle {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.125rem;
+    margin-bottom: 60px;
+    font-weight: 400;
 }
+
+/* 입력 섹션 */
+.input-section {
+    margin-bottom: 48px;
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
 .book-input {
-    width: 60%;
-    padding: 8px;
+    flex: 1;
+    min-width: 200px;
+    padding: 16px 20px;
     font-size: 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    font-family: inherit;
 }
+
+.book-input:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.1);
+}
+
+.book-input::placeholder {
+    color: #adb5bd;
+}
+
+/* 메인 버튼 - Framer 스타일 */
 .book-button {
-    padding: 8px 16px;
+    padding: 16px 32px;
     font-size: 16px;
+    font-weight: 600;
+    background: #212529;
+    color: white;
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    white-space: nowrap;
 }
+
+.book-button:hover {
+    background: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(33, 37, 41, 0.15);
+}
+
+.book-button:active {
+    transform: translateY(0);
+}
+
+/* 액션 버튼들 */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #ffffff;
+    color: #6c757d;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.action-button:hover {
+    background: #6c757d;
+    color: white;
+    border-color: #6c757d;
+    transform: translateY(-1px);
+}
+
+/* 도서 목록 */
 .book-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
+
 .book-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    padding: 24px 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.book-item:hover {
+    background: rgba(108, 117, 125, 0.04); /* 살짝 더 진한 배경만 */
+    border-radius: 8px;
+}
+
+.book-item:last-child {
+    border-bottom: none;
+}
+
+.book-item span {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+    margin-right: 16px;
+}
+
+.book-item button {
+    margin-left: 16px; /* 추가! */
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.book-item button:first-of-type {
+    margin-left: 0;
+}
+
+.book-item button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+/* 삭제 버튼 */
+.book-item button[onclick*="removeBook"] {
+    background: #ffffff;
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.book-item button[onclick*="removeBook"]:hover {
+    background: #dc3545;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* 대여/반납 버튼 */
+.book-item button[onclick*="toggleRental"] {
+    background: #ffffff;
+    color: #20c997;
+    border-color: #20c997;
+}
+
+.book-item button[onclick*="toggleRental"]:hover {
+    background: #20c997;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* 결과 표시 영역 */
 #results {
-    margin-top: 20px;
+    margin-top: 48px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
+
+#results h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
 #results ul {
     list-style: none;
     padding: 0;
+    margin: 0 0 24px 0;
 }
+
 #results li {
-    margin: 5px 0;
+    padding: 12px 0;
+    color: #6c757d;
+    border-bottom: 1px solid #f8f9fa;
+    font-size: 15px;
+}
+
+#results li:last-child {
+    border-bottom: none;
+}
+
+#results p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+    text-align: center;
+    margin: 0;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    letter-spacing: -0.01em;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 40px 20px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .book-input {
+        min-width: 100%;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .book-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .book-item span {
+        margin-right: 0;
+    }
 }
